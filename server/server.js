@@ -32,7 +32,7 @@ app.get('/todos', (req, res) => {
         res.send({todos})
     }, (e) => {
         res.stauts(400).send(e);
-    })
+    });
 });
 
 module.exports = {app};
