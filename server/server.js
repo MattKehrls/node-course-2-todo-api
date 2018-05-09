@@ -27,6 +27,16 @@ app.listen(3000, () => {
     console.log('Started on port 3000');
 })
 
+app.get('/todos', (req, res) => {
+    Todo.find().then((todos) => {//first is the success function and the results that get passed in from find method. Second is the error function
+        res.send({todos})
+    }, (e) => {
+        res.stauts(400).send(e);
+    })
+});
+
+module.exports = {app};
+
 
 
 // var otherTodo = new Todo({
