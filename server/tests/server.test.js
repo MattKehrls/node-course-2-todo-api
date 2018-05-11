@@ -32,9 +32,9 @@ describe ('POST /todos', () => {
             });
     });
 
-    it("Should not create todo with invaild body data", (done) => {
+    // it("Should not create todo with invaild body data", (done) => {
 
-    });
+    // });
 
 })
 
