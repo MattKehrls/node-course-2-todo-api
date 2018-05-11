@@ -5,3 +5,6 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/TodoApp')
 // mongoose.connect('mongodb://localhost:27017/TodoApp');
 
 module.exports = {mongoose};
+
+//Starts the local MongoDB
+//mongo.exe --dbpath /Users/Matt/Documents/Nodejs/mongo-data
