@@ -7,4 +7,4 @@ mongoose.connect(process.env.MONGODB_URI);
 module.exports = {mongoose};
 
 //Starts the local MongoDB
-//mongo.exe --dbpath /Users/Matt/Documents/Nodejs/mongo-data
+//mongod.exe --dbpath /Users/Matt/Documents/Nodejs/mongo-data
