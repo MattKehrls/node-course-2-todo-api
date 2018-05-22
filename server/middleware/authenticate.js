@@ -9,7 +9,7 @@ var authenticate = (req, res, next) => { //middle-ware to create JSON token so y
             return Promise.reject();
         }
         
-        // req.user = user;
+        req.user = user;
         req.token = token;
         next();
     }).catch((e) => {
