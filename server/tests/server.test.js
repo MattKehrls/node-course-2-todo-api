@@ -16,6 +16,7 @@ describe ('POST /todos', () => {
 
         request(app) //request is part of supertest to do requests
             .post('/todos')//must add .send() after .post to send the data
+            .set('x-auth', users[0].tokens[0].token)
             .send({text})//gets convered to JSON from supertest
             .expect(200)
             .expect((res) => {
@@ -135,7 +136,7 @@ describe('POST /user/login', () => {
                     return done(err);
                 }
                 User.findById(users[1]._id).then((user) => {
-                    expect(user.tokens[0]).toInclude({
+                    expect(user.tokens[1]).toInclude({
                         access: 'auth',
                         token: res.headers['x-auth']
                     });
@@ -160,7 +161,7 @@ describe('POST /user/login', () => {
                 return done(err);
             }
             User.findById(users[1]._id).then((user) => {
-                expect(user.tokens.length).toBe(0);
+                expect(user.tokens.length).toBe(1);
                 done();
             }).catch((e) => done(e));
         });
