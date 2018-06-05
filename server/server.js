@@ -118,11 +118,10 @@ app.get('/users', (req, res) => {
 
 
 
-app.post('/users', (req, res) => {
+app.post('/users', (req, res) => { //SIGN_UP WORKS
     var body = _.pick(req.body, ['email','password']);
     var user = new User(body);
    
-
     user.save().then(() => {
         return user.generateAuthToken();
     }).then((token) => {
