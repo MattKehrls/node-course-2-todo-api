@@ -120,7 +120,7 @@ describe('POST /users', () => {
 
 
 describe('POST /user/login', () => {
-    it('should login user and retuen auth token', (done) => {
+    it('should login user and return auth token', (done) => {
         request(app)
             .post('/users/login')
             .send({
